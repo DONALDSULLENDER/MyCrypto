@@ -26,6 +26,7 @@ import nansenLogo from '@assets/images/credits/credits-nansen.svg';
 import zapperLogo from '@assets/images/defizap/zapperLogo.svg';
 import ensLogo from '@assets/images/ens/ensIcon.svg';
 import check from '@assets/images/icn-check.svg';
+import more from '@assets/images/icn-more.svg';
 
 const icons = {
   /* Action icons */
@@ -35,6 +36,7 @@ const icons = {
   add,
   confirm,
   info,
+  more,
   'info-small': infoSmall,
 
   /* Noun icons */
@@ -68,8 +70,10 @@ const SInlineSVG = styled(InlineSVG)`
   }
 `;
 
+export type TIcon = keyof typeof icons;
+
 interface Props extends Omit<React.ComponentProps<typeof InlineSVG>, 'src'> {
-  type: keyof typeof icons;
+  type: TIcon;
   color?: string;
 }
 
